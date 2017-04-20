@@ -16,28 +16,32 @@
 
         </div>
         {% csrf_token %}
-        <div class="form-group">
+        <div class="form-group js-form-fio">
             <label for="fio" class="col-lg-2 control-label">Ф.И.О.</label>
             <div class="col-lg-9">
                 {{ form.fio }}
+                <span class="help-block"></span>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group js-form-doctor">
             <label for="doctor" class="col-lg-2 control-label">Врач</label>
             <div class="col-lg-9">
                 {{ form.doctor }}
+                <span class="help-block"></span>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group js-form-date">
             <label for="date" class="col-lg-2 control-label">Дата приема</label>
             <div class="col-lg-9">
                 {{ form.date }}
+                <span class="help-block"></span>
             </div>
         </div>
-        <div class="form-group">
+        <div class="form-group js-form-time">
             <label for="time" class="col-lg-2 control-label">Время приема</label>
             <div class="col-lg-9">
                 {{ form.time }}
+                <span class="help-block"></span>
             </div>
         </div>
         <div class="form-group">

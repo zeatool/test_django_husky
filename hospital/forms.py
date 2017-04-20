@@ -13,7 +13,7 @@ class ReceptionForm(ModelForm):
         time = cleaned_data.get('time')
         doctor = cleaned_data.get('doctor')
 
-        if not date.weekday() in [i for i in range(6)]:
+        if not date.weekday() in [i for i in range(5)]:
             raise forms.ValidationError("Не возможно записаться, мы работаем с пн. по пт.")
         if not time.hour in [i for i in range(9, 19)]:
             raise forms.ValidationError("Не возможно записаться, мы работаем с 9:00 до 18:00")

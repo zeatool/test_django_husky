@@ -25,13 +25,17 @@ def add_reception(request):
 
     data = {
         'RESULT': True,
+        'DATA':{},
         'MESSAGE': ''
     }
 
     if not form.is_valid():
         data['RESULT']=False
-        for msg in form.errors["__all__"]:
-            data['MESSAGE'] += msg
+        for msg_key in form.errors:
+            for msg in form.errors[msg_key]:
+                data['DATA'][msg_key] = msg
+                if msg_key == '__all__':
+                    data['MESSAGE'] += msg+'\n'
     else:
         data['MESSAGE'] = 'Вы успешно записаны'
         form.save()

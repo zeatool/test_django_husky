@@ -7,10 +7,20 @@ $(function () {
             message.removeClass('alert-success');
             message.removeClass('alert-danger');
 
+            $('.form-group').removeClass('has-error');
+            $('.form-group .help-block').html('');
+
             if(result.RESULT)
                 message.addClass('alert-success')
             else
                 message.addClass('alert-danger')
+
+            for (var key in result.DATA){
+                if ($('.js-form-'+key).length>0){
+                    $('.js-form-'+key).addClass('has-error');
+                    $('.js-form-'+key).find('.help-block').html(result.DATA[key]);
+                }
+            }
 
             message.html(result.MESSAGE)
         },'json')
