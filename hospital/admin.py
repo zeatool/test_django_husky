@@ -9,7 +9,8 @@ class DoctorAdmin(admin.ModelAdmin):
     inlines = [ReceptionInline, ]
 
 class ReceptionAdmin(admin.ModelAdmin):
-    list_display = ('doctor', 'date', 'time')
+    search_fields = ['fio']
+    list_display = ( 'date', 'time','doctor','fio')
     date_hierarchy = 'date'
     list_filter = ('doctor', 'date', 'time')
 
