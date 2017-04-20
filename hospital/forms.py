@@ -37,5 +37,5 @@ class ReceptionForm(ModelForm):
             }),
             'time': forms.Select(attrs={
                 'class': 'form-control',
-            },choices=[(str(i)+":00", str(i)+":00") for i in range(9,20)])
+            },choices=[(str(i)+":00", str(i)+":00") for i in range(9,19)])
         }
